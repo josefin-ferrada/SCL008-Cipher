@@ -2,6 +2,8 @@ describe('cipher', () => {
 
   it('debería ser un objeto', () => {
     assert.equal(typeof cipher, 'object');
+
+
   });
 
   describe('cipher.encode', () => {
@@ -10,8 +12,24 @@ describe('cipher', () => {
       assert.equal(typeof cipher.encode, 'function');
     });
 
-    it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33');
+    it("debería retornar 'Ingrese todos los campos' si es que falta alguno de los parámetros", () => {
+    assert.equal(cipher.encode(5), "Ingrese todos los campos");
+    });
+
+    it("debería recibir como parámetro en offset solo números", () =>{
+    assert.equal(cipher.encode("asd","hola"), "Debes ingresar un número en nivel de seguridad")
+    });
+
+    it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33', ()=>{
+      assert.equal(cipher.encode(33,"ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "HIJKLMNOPQRSTUVWXYZABCDEFG")
+    });
+
+    it('debería retornar "-*.;<klmKLM" para "# $12abcABC" con offset 10', ()=>{
+      assert.equal(cipher.encode(10,"# $12abcABC"), "-*.;<klmKLM")
+    });
+
   });
+
 
   describe('cipher.decode', () => {
 
@@ -19,7 +37,24 @@ describe('cipher', () => {
       assert.equal(typeof cipher.decode, 'function');
     });
 
-    it('debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33');
+    it("debería retornar 'Ingrese todos los campos' si es que falta alguno de los parámetros", () => {
+    assert.equal(cipher.decode(5), "Ingrese todos los campos");
+    });
+
+    it("debería recibir como parámetro en offset solo números", () =>{
+    assert.equal(cipher.decode("asd","hola"), "Debes ingresar un número en nivel de seguridad")
+    });
+
+    it('debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33', () =>{
+
+      assert.equal(cipher.decode(33,"HIJKLMNOPQRSTUVWXYZABCDEFG"), "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+    it('debería retornar "# $12abcABC" para "-*.;<klmKLM" con offset 10', ()=>{
+
+      assert.equal(cipher.decode(10,"-*.;<klmKLM"), "# $12abcABC")
+    });
   });
+
+
 
 });

@@ -3,12 +3,138 @@
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Abel|Karla" rel="stylesheet">
   </head>
   <body>
-    <div id="root">
-      <h1>Hola mundo!</h1>
-    </div>
+
+    <header id="welcome" >
+      <div class="flexbox-container" >
+        <div class="header-image"></div>
+        <div class="font-abel " ><h1>Guarda tu invitación con niveles de encriptado y compartela con tus invitados!</h1> <a href="#section1" class="btn btn-outline-dark btn-lg btn-block"> Empezar</a>
+       </div>
+      </div>
+
+    </header> 
+    
+    <section id="section1" class="font-abel">
+
+      <div> <h1 class="middle"> ¿Que deseas hacer?</h1>
+        <div class="flexbox-container" >
+          <div class="imagen-secret" > <a href="#section2" class="btn btn-outline-dark btn-lg btn-block" id="btn" > Guardar Secreto </a></div>
+
+       
+          <div class="imagen-eye"><a href="#section3" class="btn btn-outline-dark btn-lg btn-block" id="btn2"> Mostrar Secreto</a>
+          </div> 
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section id="section2">
+      
+      <div id="container-text-to-encode" class="flexbox-container middle font-abel">
+        
+        <div class="font-abel" >
+          <h1>¡A Guardar el secreto!</h1>
+          <h3>Ingresa tu texto a encriptar</h3>
+          <textarea id="textToEncrypt" ></textarea>
+          </div>
+
+          <div ><h2>Escribe el nivel de seguridad de tu secreto</h2><img src="https://static1.squarespace.com/static/562a3f41e4b05e6cc1f422ad/t/587920ff1e5b6c9b64f7be22/1484333351006/Top-Secret-Workshop-katebeaton-clear.gif?format=500w" width="300px" height="250px">
+          <h3>*solo números</h3>
+         <input type="text" id="numberOffset">
+
+          <a href="#section-final-encode"  id="encodeBtn" class= "btn btn-outline-dark btn-lg" >Encriptar</a>
+         </div>
+
+         
+       </div>
+     
+
+   </section>
+
+   <section id="section3">
+      
+      <div id="container-text-to-decode" class="flexbox-container middle font-abel">
+        
+        <div class="font-abel">
+          <h1>¡Veamos que dice!</h1>
+          <h1>Ingresa tu texto para mostrar</h1>
+          <textarea id="textToShow" ></textarea>
+          </div>
+
+          <div><h2>Escribe el nivel de seguridad de tu secreto</h2><img src="https://thumbs.gfycat.com/ResponsibleUnevenBlobfish-size_restricted.gif" width="300px" height="250px">
+          <h3>*solo números</h3>
+         <input type="text" id="numberOffsettoShow">
+
+          <a href="#section-final-decode" id="decodeBtn" class= "btn btn-outline-dark btn-lg btn-block"  > Mostrar</a> 
+         </div>
+
+         
+       </div>
+      
+
+   </section>
+
+   <section id="section-final-encode">
+        
+        <div class="flexbox-container middle font-abel">
+          
+          <div class="font-abel">
+            <h1>Listo! Tenemos tu mensaje a salvo</h1>
+            
+            <textarea id="final-encode-text" class="margin-subtitle"></textarea>
+            <br>
+            <button type="button" class= "btn btn-outline-dark btn-lg">Copiar texto</button>
+            </div>
+
+            <div><h3 style="margin-top: 11px">Recuerda informar el nivel de seguridad a quién entregues el mensaje secreto, para que pueda descifrarlo</h3>
+              
+              <h4>El nivel de seguridad de tu secreto es:</h4>
+             
+           <input type="text" id="final-offset" class="margin-subtitle size-of-input">
+
+            <a href="#welcome"   id="back" class= "btn btn-outline-dark btn-lg back-btn "  > Volver al inicio</a>
+            
+           </div>
+
+           
+         </div>
+      
+
+     </section>
+
+      <section id="section-final-decode">
+        
+        <div class="flexbox-container middle font-abel">
+          
+          <div class="font-abel">
+            <h1>Listo! Veamos que dice</h1>
+            
+            <textarea id="final-decode-text" class="margin-subtitle"></textarea>
+            <br>
+            <button type="button" class= "btn btn-outline-dark btn-lg">Copiar texto</button>
+          </div>
+
+          <div>
+              
+            <h3 style="margin-top: 10px;">El nivel de seguridad de tu secreto es:</h3>
+            <input type="text" id="final-show-offset" class="size-of-input">
+            <img  src="https://cdn.dribbble.com/users/1309335/screenshots/3061342/eye_dribbble.gif" style= "display: block; margin-left: auto;margin-right: auto; margin-top: 20px;"  width="400" height="300">
+            <a href="#welcome" id="back-btn2" class= "btn btn-outline-dark btn-lg back-btn "> Volver al inicio</a>
+            
+           </div>
+
+        </div>
+         
+        
+
+     </section>
+
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>
