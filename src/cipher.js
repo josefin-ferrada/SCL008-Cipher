@@ -2,15 +2,12 @@ window.cipher = {
     
     encode:(offset,frase)=>{
 
-        if ( offset === undefined || frase === undefined) {
+        if ( offset === "" || frase === "" || isNaN(offset) ) {
 
-            return "Ingrese todos los campos";
+            return false;
+
         }
 
-        else if (isNaN(offset)) {
-
-            return "Debes ingresar un número en nivel de seguridad";
-        }
         else {
             let result ="";
             let cadaAscii= 0;
@@ -44,15 +41,13 @@ window.cipher = {
     
 
     ,decode: (offset,frase) => {
-        if ( offset === undefined || frase === undefined) {
+        if ( offset === "" || frase === "" || isNaN(offset) ) {
 
-            return "Ingrese todos los campos";
+            return false;
+
         }
 
-        else if (isNaN(offset)) {
-
-            return "Debes ingresar un número en nivel de seguridad";
-        }
+    
         else {
             let result ="";
             let cadaAscii= 0;

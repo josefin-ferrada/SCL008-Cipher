@@ -46,7 +46,7 @@ header{
 }
 .header-image{
 
-	background-image: url("https://i.ibb.co/nD84DL3/shhh.png");
+	background-image: url("https://i.ibb.co/C5Fn86h/secret-party.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 400px;
@@ -126,8 +126,8 @@ position: center;
 .back-btn{
 
 	display: block;
-	margin-left: 0px;
-	margin-top: 39px
+	
+	
 }
 #back-btn2{
 
@@ -146,7 +146,32 @@ html {
 }
 body{
 
-	background-image: url("https://i.ibb.co/tB95MZQ/shine.png");
+	background-image: url("https://i.ibb.co/g6xLYYd/shine.png");
 	font-family:sans-serif;
 	
-}/* Acá va tu código */
+}
+
+
+.eye-image{
+display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 50px;
+ width:400px ;
+ height: 300px;}
+
+
+
+ .back-welcome-btn{
+
+  margin-top: 240px;
+ }
+
+ .saved-image{
+
+ 	width: 200px;
+ 	height: 200px;
+ }
+
+
+/* Acá va tu código */

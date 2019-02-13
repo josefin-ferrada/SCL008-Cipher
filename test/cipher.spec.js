@@ -12,16 +12,19 @@ describe('cipher', () => {
       assert.equal(typeof cipher.encode, 'function');
     });
 
-    it("debería retornar 'Ingrese todos los campos' si es que falta alguno de los parámetros", () => {
-    assert.equal(cipher.encode(5), "Ingrese todos los campos");
+    it("debería retornar 'false' si es que falta alguno de los parámetros", () => {
+      assert.equal(cipher.encode(5,""),false);
+    });
+    it("debería retornar 'false' si es que falta alguno de los parámetros", () => {
+      assert.equal(cipher.encode("","hola"),false);
     });
 
     it("debería recibir como parámetro en offset solo números", () =>{
-    assert.equal(cipher.encode("asd","hola"), "Debes ingresar un número en nivel de seguridad")
+      assert.equal(cipher.encode("asd","hola"),false);
     });
 
     it('debería retornar "HIJKLMNOPQRSTUVWXYZABCDEFG" para "ABCDEFGHIJKLMNOPQRSTUVWXYZ" con offset 33', ()=>{
-      assert.equal(cipher.encode(33,"ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "HIJKLMNOPQRSTUVWXYZABCDEFG")
+      assert.equal(cipher.encode(33,"ABCDEFGHIJKLMNOPQRSTUVWXYZ"), "HIJKLMNOPQRSTUVWXYZABCDEFG");
     });
 
     it('debería retornar "-*.;<klmKLM" para "# $12abcABC" con offset 10', ()=>{
@@ -38,11 +41,15 @@ describe('cipher', () => {
     });
 
     it("debería retornar 'Ingrese todos los campos' si es que falta alguno de los parámetros", () => {
-    assert.equal(cipher.decode(5), "Ingrese todos los campos");
+      assert.equal(cipher.decode(5,""), false);
+    });
+
+    it("debería retornar 'false' si es que falta alguno de los parámetros", () => {
+      assert.equal(cipher.decode("","hola"),false);
     });
 
     it("debería recibir como parámetro en offset solo números", () =>{
-    assert.equal(cipher.decode("asd","hola"), "Debes ingresar un número en nivel de seguridad")
+      assert.equal(cipher.decode("asd","hola"), false);
     });
 
     it('debería retornar "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para "HIJKLMNOPQRSTUVWXYZABCDEFG" con offset 33', () =>{

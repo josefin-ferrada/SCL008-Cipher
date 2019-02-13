@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <title>Fiesta Sorpresa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Abel|Karla" rel="stylesheet">
@@ -12,7 +12,7 @@
     <header id="welcome" >
       <div class="flexbox-container" >
         <div class="header-image"></div>
-        <div class="font-abel " ><h1>Guarda tu invitación con niveles de encriptado y compartela con tus invitados!</h1> <a href="#section1" class="btn btn-outline-dark btn-lg btn-block"> Empezar</a>
+        <div class="font-abel " ><h1>Guarda tu invitación para tu fiesta sorpresa con niveles de seguridad y compartela con tus invitados!</h1> <a href="#section1" class="btn btn-outline-dark btn-lg btn-block"> Empezar</a>
        </div>
       </div>
 
@@ -47,6 +47,9 @@
           <div ><h2>Escribe el nivel de seguridad de tu secreto</h2><img src="https://static1.squarespace.com/static/562a3f41e4b05e6cc1f422ad/t/587920ff1e5b6c9b64f7be22/1484333351006/Top-Secret-Workshop-katebeaton-clear.gif?format=500w" width="300px" height="250px">
           <h3>*solo números</h3>
          <input type="text" id="numberOffset">
+         <div class="alert alert-danger" role="alert" id="alert-parameter-missing" style="display: none;">
+          Ingrese todos los campos. El nivel de seguridad debe ser numérico
+        </div>
 
           <a href="#section-final-encode"  id="encodeBtn" class= "btn btn-outline-dark btn-lg" >Encriptar</a>
          </div>
@@ -69,7 +72,10 @@
 
           <div><h2>Escribe el nivel de seguridad de tu secreto</h2><img src="https://thumbs.gfycat.com/ResponsibleUnevenBlobfish-size_restricted.gif" width="300px" height="250px">
           <h3>*solo números</h3>
-         <input type="text" id="numberOffsettoShow">
+         <input type="text" id="numberOffsetToShow" class="margin-subtitle">
+         <div class="alert alert-danger" role="alert" id="alert-parameter-missing2" style="display: none;">
+          Ingrese todos los campos. El nivel de seguridad debe ser numérico
+        </div>
 
           <a href="#section-final-decode" id="decodeBtn" class= "btn btn-outline-dark btn-lg btn-block"  > Mostrar</a> 
          </div>
@@ -89,7 +95,7 @@
             
             <textarea id="final-encode-text" class="margin-subtitle"></textarea>
             <br>
-            <button type="button" class= "btn btn-outline-dark btn-lg">Copiar texto</button>
+            <button type="button" class= "btn btn-outline-dark btn-lg" id="copy-button2">Copiar texto</button>
             </div>
 
             <div><h3 style="margin-top: 11px">Recuerda informar el nivel de seguridad a quién entregues el mensaje secreto, para que pueda descifrarlo</h3>
@@ -97,8 +103,9 @@
               <h4>El nivel de seguridad de tu secreto es:</h4>
              
            <input type="text" id="final-offset" class="margin-subtitle size-of-input">
+           <img src="https://i.ibb.co/1Tzywr8/closed-envelope-1.png" class="saved-image" style="width: 100px; height: 100px">
 
-            <a href="#welcome"   id="back" class= "btn btn-outline-dark btn-lg back-btn "  > Volver al inicio</a>
+            <a href="#welcome"   id="back" class= "btn btn-outline-dark btn-lg back-btn back-welcome-btn "  > Volver al inicio</a>
             
            </div>
 
@@ -117,14 +124,14 @@
             
             <textarea id="final-decode-text" class="margin-subtitle"></textarea>
             <br>
-            <button type="button" class= "btn btn-outline-dark btn-lg">Copiar texto</button>
+            <button type="button" class= "btn btn-outline-dark btn-lg" id="copy-button1">Copiar texto</button>
           </div>
 
           <div>
               
             <h3 style="margin-top: 10px;">El nivel de seguridad de tu secreto es:</h3>
             <input type="text" id="final-show-offset" class="size-of-input">
-            <img  src="https://cdn.dribbble.com/users/1309335/screenshots/3061342/eye_dribbble.gif" style= "display: block; margin-left: auto;margin-right: auto; margin-top: 20px;"  width="400" height="300">
+            <img  src="https://cdn.dribbble.com/users/1309335/screenshots/3061342/eye_dribbble.gif" class="eye-image">
             <a href="#welcome" id="back-btn2" class= "btn btn-outline-dark btn-lg back-btn "> Volver al inicio</a>
             
            </div>
