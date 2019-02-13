@@ -43,7 +43,7 @@ El diseño es pensado para todo público.
 ## Demo y Trello
 
 
-Link a demo de proyecto [Demo](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e)
+Link a demo de proyecto [Demo](https://josefin-ferrada.github.io/SCL008-Cipher/src/index.html)
 
 Link a trello de proyecto [Trello](https://trello.com/invite/b/wjAgiuCR/7198fa504abf44ecd13fe556c92b490b/cipher-project)
 
